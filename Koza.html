@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Google Chart</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+              packages: ["calendar"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2019, 2, 24, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 26, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 27, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 4, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 9, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 13, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 18, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 20, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 24, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 30, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 4, 7, 0, 0, 0)"}, {"v": 2}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Koza","colorAxis":{"minValue":0,"maxValue":6,"colors":["#ff0000","#00ff00"]}} 
+
+                var chart = new google.visualization.Calendar(document.getElementById('51697648-1b91-4dcc-bc2b-192ddccdf860'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="51697648-1b91-4dcc-bc2b-192ddccdf860" style="width: 1000px; height: 600px;"></div>
+    </body>
+</html>

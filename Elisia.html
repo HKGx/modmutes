@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Google Chart</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+              packages: ["calendar"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2019, 1, 16, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 1, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 1, 18, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2019, 1, 20, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 1, 26, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 2, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 5, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 10, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 2, 14, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 15, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 20, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 21, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 3, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 5, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 7, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 9, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 3, 11, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 17, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 3, 20, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 26, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 4, 3, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 4, 4, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 4, 6, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 4, 25, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 5, 4, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 5, 9, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 5, 14, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 5, 15, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 5, 16, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2019, 5, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 5, 21, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 5, 23, 0, 0, 0)"}, {"v": 4}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Elisia","colorAxis":{"minValue":0,"maxValue":6,"colors":["#ff0000","#00ff00"]}} 
+
+                var chart = new google.visualization.Calendar(document.getElementById('bc4cb055-7c15-43b6-b612-bb2bdd91d658'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="bc4cb055-7c15-43b6-b612-bb2bdd91d658" style="width: 1000px; height: 600px;"></div>
+    </body>
+</html>
