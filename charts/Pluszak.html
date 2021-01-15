@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Google Chart</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+              packages: ["calendar"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2019, 1, 26, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 2, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2019, 2, 4, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 2, 10, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 11, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 12, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 2, 15, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 16, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 2, 17, 0, 0, 0)"}, {"v": 11}]}, {"c" : [{"v": "Date(2019, 2, 19, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 20, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 2, 24, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2019, 2, 25, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 2, 26, 0, 0, 0)"}, {"v": 1}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Pluszak","colorAxis":{"minValue":1,"maxValue":6,"colors":["#ff5f38","#1aff1a"]}} 
+
+                var chart = new google.visualization.Calendar(document.getElementById('034776d0-a94e-4cbf-946a-dbf90c93fa5b'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body style="background-color:#181a1b;">
+        <div id="034776d0-a94e-4cbf-946a-dbf90c93fa5b" style="width: 1000px; height: 600px;"></div>
+    </body>
+</html>
