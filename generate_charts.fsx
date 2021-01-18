@@ -7,7 +7,10 @@ open XPlot.GoogleCharts
 open Parse_mutes
 open Template
 
-Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
+let dir =
+    System.IO.Directory.CreateDirectory(__SOURCE_DIRECTORY__ + "/dist")
+
+System.Environment.CurrentDirectory <- dir.FullName
 
 let stopwatch = System.Diagnostics.Stopwatch.StartNew()
 printfn "Started generating moderator mute charts"
@@ -67,15 +70,6 @@ let save (mc: string * GoogleChart) =
 
 
 let gs = getChart >> save
-
-// moderatorDatesOfMutes |> Array.iter gs
-
-
-
-
-
-
-
 
 moderatorDatesOfMutes |> Array.iter gs
 

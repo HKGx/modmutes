@@ -3,7 +3,11 @@
 open FSharp.Data
 open System.IO
 
-System.Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
+let dir =
+    System.IO.Directory.CreateDirectory(__SOURCE_DIRECTORY__ + "/dist")
+
+System.Environment.CurrentDirectory <- dir.FullName
+
 
 let stopwatch = System.Diagnostics.Stopwatch.StartNew()
 printfn "Started filtering mutes"

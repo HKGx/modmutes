@@ -15,8 +15,8 @@ jobs:
     - name: Setup for commiting changes
       uses: EndBug/add-and-commit@v7
       with:
+        add: 'dist'
         message: Add pages files
-        branch: gh-pages
         pull_strategy: --rebase
     - name: Run FSI 
       run: dotnet fsi generate_charts.fsx
