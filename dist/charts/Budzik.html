@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Google Chart</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+              packages: ["calendar"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2020, 1, 24, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 1, 26, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 1, 27, 0, 0, 0)"}, {"v": 4}]}, {"c" : [{"v": "Date(2020, 2, 3, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 2, 7, 0, 0, 0)"}, {"v": 1}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Budzik, wszystkich mute: 10","colorAxis":{"minValue":1,"maxValue":6,"colors":["#ff5f38","#1aff1a"]}} 
+
+                var chart = new google.visualization.Calendar(document.getElementById('d80bac55-30da-4d74-abba-c489b53535bd'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 01/17/2021 19:56:31</h3>
+        <div id="d80bac55-30da-4d74-abba-c489b53535bd" style="width: 1000px; height: 600px;"></div>
+    </body>
+</html>

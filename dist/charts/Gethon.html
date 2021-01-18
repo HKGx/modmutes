@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Google Chart</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+              packages: ["calendar"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2018, 7, 31, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2018, 8, 16, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2018, 9, 21, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2018, 9, 23, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2018, 9, 25, 0, 0, 0)"}, {"v": 4}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Gethon, wszystkich mute: 8","colorAxis":{"minValue":1,"maxValue":6,"colors":["#ff5f38","#1aff1a"]}} 
+
+                var chart = new google.visualization.Calendar(document.getElementById('2ad17e4a-5ee9-4e13-a129-47ad1904f4b8'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 01/17/2021 19:56:31</h3>
+        <div id="2ad17e4a-5ee9-4e13-a129-47ad1904f4b8" style="width: 1000px; height: 600px;"></div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Google Chart</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+              packages: ["calendar"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2018, 9, 28, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2018, 10, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2018, 10, 18, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2018, 10, 26, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2018, 11, 28, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 0, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 0, 26, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 1, 16, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 10, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 3, 20, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 4, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 5, 17, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2019, 5, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 6, 16, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2019, 7, 8, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2019, 7, 9, 0, 0, 0)"}, {"v": 8}]}, {"c" : [{"v": "Date(2020, 4, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 6, 3, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 10, 18, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 19, 0, 0, 0)"}, {"v": 2}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Pawwit, wszystkich mute: 34","colorAxis":{"minValue":1,"maxValue":6,"colors":["#ff5f38","#1aff1a"]}} 
+
+                var chart = new google.visualization.Calendar(document.getElementById('5891814b-decd-4fed-a2bf-0e96583f569d'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 01/17/2021 19:56:31</h3>
+        <div id="5891814b-decd-4fed-a2bf-0e96583f569d" style="width: 1000px; height: 600px;"></div>
+    </body>
+</html>
