@@ -5,6 +5,9 @@ open System.IO
 
 System.Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
 
+let stopwatch = System.Diagnostics.Stopwatch.StartNew()
+printfn "Started filtering mutes"
+
 [<Literal>]
 let SAMPLE =
     """[{"userId":"any","userTag":"Loxy#1111","date":"1/14/2021, 3:23:38 AM","length":"1 hour","moderator":"TheKrago#5448","reason":"Obrażanie"}]"""
@@ -29,4 +32,5 @@ filtered
 |> tuple "mutes.json"
 |> File.WriteAllText
 
-printfn $"Filtered out {mutes.Length - filtered.Length} mutes"
+stopwatch.Stop()
+printfn $"Filtered out {mutes.Length - filtered.Length} mutes in {stopwatch.Elapsed.TotalMilliseconds}ms"

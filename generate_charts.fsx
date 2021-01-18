@@ -1,11 +1,16 @@
 #r "nuget:XPlot.GoogleCharts"
 #load "parse_mutes.fsx"
+#load "template.fsx"
 
 open System
 open XPlot.GoogleCharts
 open Parse_mutes
+open Template
 
 Environment.CurrentDirectory <- __SOURCE_DIRECTORY__
+
+let stopwatch = System.Diagnostics.Stopwatch.StartNew()
+printfn "Started generating moderator mute charts"
 
 let getDates (mutes: Mute array) =
     mutes
@@ -28,8 +33,7 @@ let moderators =
     |> Array.map (fst >> (fun m -> m.ToString()))
 
 let lastMute =
-    (filteredUnknownMutes |> Array.last)
-        .Date.ToString()
+    (filteredUnknownMutes |> Array.last).Date
 
 let getChart (md: Moderator * (DateTime * int) array) =
     let moderator = (fst md).ToString()
@@ -65,33 +69,17 @@ let save (mc: string * GoogleChart) =
 let gs = getChart >> save
 
 // moderatorDatesOfMutes |> Array.iter gs
+
+
+
+
+
+
+
+
 moderatorDatesOfMutes |> Array.iter gs
 
-
-
-let moderatorsHtmlList (mods: string array) =
-    let getLi m =
-        sprintf """        <li> <a href="charts/%s.html">%s</li>""" m m
-
-    let listItems =
-        Array.map getLi mods |> String.concat "\n"
-
-    $"<ul>\n{listItems}\n    </ul>"
-
-
-
-let template = File.ReadAllText("./_index.html")
-
-let htmlList =
-    moderators |> Array.sort |> moderatorsHtmlList
-
-
-
-("index.html",
- template
-     .Replace("{{LIST}}", htmlList.ToString())
-     .Replace("{{LAST}}", lastMute))
+("index.html", page lastMute moderators)
 |> File.WriteAllText
 
-
-printfn $"Generated {moderators.Length} charts!"
+printfn $"Generated {moderators.Length} charts! It took {stopwatch.Elapsed.TotalMilliseconds}ms"

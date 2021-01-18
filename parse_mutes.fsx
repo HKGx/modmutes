@@ -1,7 +1,12 @@
 #r "nuget:FSharp.Data"
+#load "filter_mutes.fsx"
 
 open FSharp.Data
 open System
+
+
+let stopwatch = System.Diagnostics.Stopwatch.StartNew()
+printfn "Started parsing mutes"
 
 
 [<Literal>]
@@ -216,3 +221,8 @@ let fromUnknown m =
 
 let filteredUnknownMutes =
     filteredMutes |> Array.filter (fromUnknown >> not)
+
+
+stopwatch.Stop()
+
+printfn $"Parsed mutes in {stopwatch.Elapsed.TotalMilliseconds}ms"
