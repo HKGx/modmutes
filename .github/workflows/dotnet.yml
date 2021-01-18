@@ -19,3 +19,4 @@ jobs:
       with:
         message: Add pages files
         branch: gh-pages
+        pull_strategy: --rebase
