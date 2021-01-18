@@ -20,3 +20,5 @@ jobs:
         message: Add pages files
         branch: gh-pages
         pull_strategy: --rebase
+    - name: Git Status
+      run: git status
