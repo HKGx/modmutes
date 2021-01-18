@@ -1,0 +1,21 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Run FSI 
+      run: dotnet fsi generate_charts.fsx
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v7
+      with:
+        message: Add pages files
+        branch: gh-pages
