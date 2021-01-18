@@ -17,5 +17,5 @@ jobs:
     - name: Setup for commiting changes
       uses: EndBug/add-and-commit@v7
       with:
-        add: 'dist'
+        add: 'docs'
         message: Add pages files

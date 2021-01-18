@@ -8,7 +8,7 @@ open Parse_mutes
 open Template
 
 let dir =
-    System.IO.Directory.CreateDirectory(__SOURCE_DIRECTORY__ + "/dist")
+    System.IO.Directory.CreateDirectory(__SOURCE_DIRECTORY__ + "/docs")
 
 System.Environment.CurrentDirectory <- dir.FullName
 

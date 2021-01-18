@@ -4,7 +4,7 @@ open FSharp.Data
 open System.IO
 
 let dir =
-    System.IO.Directory.CreateDirectory(__SOURCE_DIRECTORY__ + "/dist")
+    System.IO.Directory.CreateDirectory(__SOURCE_DIRECTORY__ + "/docs")
 
 System.Environment.CurrentDirectory <- dir.FullName
 
