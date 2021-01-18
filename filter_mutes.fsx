@@ -15,7 +15,7 @@ let SAMPLE =
 type Mutes = JsonProvider<SAMPLE>
 
 let mutes =
-    Mutes.Load($"{__SOURCE_DIRECTORY__}./lista_mute.json")
+    Mutes.Load($"{__SOURCE_DIRECTORY__}/lista_mute.json")
 
 let onlyDigits (s: string) = s |> Seq.forall System.Char.IsDigit
 

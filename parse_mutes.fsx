@@ -16,7 +16,7 @@ let SAMPLE =
 type Mutes = JsonProvider<SAMPLE>
 
 let mutes =
-    Mutes.Load($"{__SOURCE_DIRECTORY__}./mutes.json")
+    Mutes.Load($"{__SOURCE_DIRECTORY__}/mutes.json")
 
 type Moderator =
     | Rei
