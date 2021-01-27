@@ -29,7 +29,7 @@ let moderatorDatesOfMutes =
 
 
 let options =
-    Options(colorAxis = ColorAxis(minValue = 1, maxValue = 6, colors = [| "#ff5f38"; "#1aff1a" |]))
+    Options(colorAxis = ColorAxis(minValue = 0, maxValue = 6))
 
 let moderators =
     moderatorDatesOfMutes
