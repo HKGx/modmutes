@@ -38,15 +38,23 @@ let moderators =
 let lastMute =
     (filteredUnknownMutes |> Array.last).Date
 
+let allMutesCount = filteredUnknownMutes |> Array.length
+
 let getChart (md: Moderator * (DateTime * int) array) =
     let moderator = (fst md).ToString()
     let dates = snd md
-    let allMutes = Array.sumBy snd dates
+
+    let allModeratorMutes = dates |> Array.sumBy snd
+
+    let percentageOfAllMutes =
+        float allModeratorMutes / float allMutesCount
+        * 100.0
 
     moderator,
     dates
     |> Chart.Calendar
-    |> Chart.WithTitle $"{moderator}, wszystkich mute: {allMutes}"
+    |> Chart.WithTitle
+        $"{moderator}, wszystkich mute: {allModeratorMutes}, procent wszystkich: %.1f{percentageOfAllMutes}%%"
     |> Chart.WithHeight 600
     |> Chart.WithWidth 1000
     |> Chart.WithOptions options
@@ -72,6 +80,7 @@ let save (mc: string * GoogleChart) =
 let gs = getChart >> save
 
 moderatorDatesOfMutes |> Array.iter gs
+
 
 ("index.html", page lastMute moderators)
 |> File.WriteAllText
