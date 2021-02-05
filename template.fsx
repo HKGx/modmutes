@@ -2,20 +2,6 @@
 
 open Giraffe.ViewEngine
 
-let cssStyle =
-    str
-        """
-body {
-            background-color: #181a1b;
-        }
-        * {
-            color: aliceblue;
-        }
-        *:visited {
-            color: bisque;
-        }
-"""
-
 let moderatorListItem (moderator: string) =
     li [] [
         a [ (sprintf "charts/%s.html" moderator |> _href) ] [
@@ -25,7 +11,8 @@ let moderatorListItem (moderator: string) =
 
 let head =
     head [] [
-        style [] [ cssStyle ]
+        link [ _href "style.css"
+               _rel "stylesheet" ]
         meta [ _charset "UTF-8" ]
         title [] [ str "Moderator Mutes" ]
     ]

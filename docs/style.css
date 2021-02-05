@@ -1,0 +1,11 @@
+body {
+  background-color: #181a1b;
+}
+a,
+h3,
+li {
+  color: aliceblue;
+}
+a:visited {
+  color: bisque;
+}
