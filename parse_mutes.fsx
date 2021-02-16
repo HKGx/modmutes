@@ -10,8 +10,24 @@ printfn "Started parsing mutes"
 
 
 [<Literal>]
-let SAMPLE =
-    """[{"userId":"646407598077247499","userTag":"Loxy#1111","date":"1/14/2021, 3:23:38 AM","length":"1 hour","moderator":"TheKrago#5448","reason":"Obrażanie"}]"""
+let SAMPLE = """[
+        {
+           "userId":"646407598077247499",
+           "userTag":"Loxy#1111",
+           "date":"1/14/2021, 3:23:38 AM",
+           "length":"1 hour",
+           "moderator":"TheKrago#5448",
+           "reason":"Obrażanie"
+        },
+        {
+           "userId":"646407598077247499",
+           "userTag":null,
+           "date":"1/14/2021, 3:23:38 AM",
+           "length":"1 hour",
+           "moderator":null,
+           "reason":"Obrażanie"
+        }
+     ]"""
 
 type Mutes = JsonProvider<SAMPLE>
 
@@ -94,21 +110,24 @@ type Moderator =
     | Rzepa
     | Unknown of string
 
-let (|Contains|_|) (what: string) (str: string) =
-    if str.Contains(what) then
-        Some(str)
-    else
-        None
 
-let (|ContainsMany|_|) (what: string list) (str: string) =
-    if what |> List.exists (fun s -> str.Contains(s)) then
-        Some(str)
-    else
-        None
+let (|Contains|_|) (what: string) (toMatch: string option) =
+    match toMatch with
+    | Some s -> if s.Contains what then Some s else None
+    | _ -> None
+
+let (|ContainsMany|_|) (what: string list) (toMatch: string option) =
+    match toMatch with
+    | Some str ->
+        if what |> List.exists (fun s -> str.Contains(s)) then
+            Some str
+        else
+            None
+    | _ -> None
 
 type Mute =
     { UserId: int64
-      UserTag: string
+      UserTag: string option
       Date: DateTime
       Length: string
       Moderator: Moderator
@@ -116,7 +135,7 @@ type Mute =
 
 let parseModerator (m: Mutes.Root) =
     let moderator =
-        match m.Moderator.ToLower() with
+        match m.Moderator with
         | Contains "rei~" _ -> Rei
         | Contains "defous" _ -> Defous
         | Contains "szejder" _ -> Szejder
@@ -190,8 +209,8 @@ let parseModerator (m: Mutes.Root) =
         | Contains "advancee" _ -> Advance
         | Contains "thekrago" _ -> Krago
         | Contains "turnip" _ -> Rzepa
-        | s when String.IsNullOrEmpty s -> Unknown "brak danych"
-        | s -> Unknown s
+        | None -> Unknown "brak danych"
+        | Some s -> Unknown s
 
     { UserId = m.UserId
       UserTag = m.UserTag
