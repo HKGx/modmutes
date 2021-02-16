@@ -57,9 +57,9 @@ if lastFilterMuteFlag then
     let filtered = mutes |> Array.filter onlyDigitsInUserId
 
     filtered
-    |> Array.map (fun m -> m.JsonValue.ToString())
+    |> Array.map (fun m -> m.JsonValue.ToString(JsonSaveOptions.DisableFormatting))
     |> String.concat ","
-    |> sprintf "[\n%s\n]"
+    |> sprintf "[%s]"
     |> tuple "mutes.json"
     |> File.WriteAllText
 
