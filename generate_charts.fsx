@@ -67,8 +67,10 @@ let save (mc: string * GoogleChart) =
     let html =
         chart
             .GetHtml()
-            .Replace("<body>",
-                     $"""<body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na {lastMute}</h3>""")
+            .Replace(
+                "<body>",
+                $"""<body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na {lastMute}</h3>"""
+            )
 
     let curr = Directory.GetCurrentDirectory()
     let file = $"{moderator}.html"
