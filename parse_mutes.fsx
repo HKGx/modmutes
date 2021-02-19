@@ -113,13 +113,18 @@ type Moderator =
 
 let (|Contains|_|) (what: string) (toMatch: string option) =
     match toMatch with
-    | Some s -> if s.Contains what then Some s else None
+    | Some s ->
+        if s.ToLower().Contains what then
+            Some s
+        else
+            None
     | _ -> None
 
 let (|ContainsMany|_|) (what: string list) (toMatch: string option) =
     match toMatch with
     | Some str ->
-        if what |> List.exists (fun s -> str.Contains(s)) then
+        if what
+           |> List.exists (fun s -> str.ToLower().Contains(s)) then
             Some str
         else
             None
