@@ -108,6 +108,7 @@ type Moderator =
     | Advance
     | Krago
     | Rzepa
+    | Szatanka
     | Unknown of string
 
 
@@ -214,6 +215,7 @@ let parseModerator (m: Mutes.Root) =
         | Contains "advancee" _ -> Advance
         | Contains "thekrago" _ -> Krago
         | Contains "turnip" _ -> Rzepa
+        | Contains "szatanka" _ -> Szatanka
         | None -> Unknown "brak danych"
         | Some s -> Unknown s
 
