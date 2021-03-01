@@ -19,3 +19,4 @@ git add lista_mute.json
 $str = "Data, gathered at $date UTC"
 Write-Output $str
 git commit -m "`"$str`""
+git push
