@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Google Chart</title>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-              packages: ["calendar"]
-            });
-            google.charts.setOnLoadCallback(drawChart);
+<html><head><link href="../style.css" rel="stylesheet"><meta charset="UTF-8"><title>RestInPeace</title><script src="https://www.gstatic.com/charts/loader.js"></script><script>google.charts.load("current", {packages:["corechart", "calendar"]});</script></head><body><h1>RestInPeace</h1><script>google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
                 if ("")
                     google.visualization.mapsApiKey = ""
@@ -18,14 +8,21 @@
 
                 
 
-                var options = {"legend":{"position":"none"},"title":"RestInPeace, wszystkich mute: 17, procent wszystkich: 0.2%","colorAxis":{"minValue":0,"maxValue":6}} 
+                var options = {"legend":{"position":"none"},"title":"Wyciszenia na dzień","colorAxis":{"minValue":0,"maxValue":6}} 
 
-                var chart = new google.visualization.Calendar(document.getElementById('2ac406a6-656a-4c4f-ac83-20cba686d4c5'));
+                var chart = new google.visualization.Calendar(document.getElementById('4365c05a-e6a6-4285-9fb1-b3c5d9b5d053'));
                 chart.draw(data, options);
-            }
-        </script>
-    </head>
-    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 03/08/2021 14:04:45</h3>
-        <div id="2ac406a6-656a-4c4f-ac83-20cba686d4c5" style="width: 1000px; height: 600px;"></div>
-    </body>
-</html>
+            }</script><div id="4365c05a-e6a6-4285-9fb1-b3c5d9b5d053" style="width: 100vw; height: 100vh"></div><script>google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "23"}, {"v": 1}]}, {"c" : [{"v": "0"}, {"v": 2}]}, {"c" : [{"v": "1"}, {"v": 2}]}, {"c" : [{"v": "2"}, {"v": 2}]}, {"c" : [{"v": "12"}, {"v": 1}]}, {"c" : [{"v": "14"}, {"v": 1}]}, {"c" : [{"v": "16"}, {"v": 1}]}, {"c" : [{"v": "20"}, {"v": 2}]}, {"c" : [{"v": "3"}, {"v": 1}]}, {"c" : [{"v": "13"}, {"v": 1}]}, {"c" : [{"v": "18"}, {"v": 3}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Mute o danych godzinach"} 
+
+                var chart = new google.visualization.Histogram(document.getElementById('730ea713-ef8e-4a4b-bb7b-39af5ba25860'));
+                chart.draw(data, options);
+            }</script><div id="730ea713-ef8e-4a4b-bb7b-39af5ba25860" style="width: 100vw; height: 100vh"></div></body></html>

@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Google Chart</title>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-              packages: ["calendar"]
-            });
-            google.charts.setOnLoadCallback(drawChart);
+<html><head><link href="../style.css" rel="stylesheet"><meta charset="UTF-8"><title>Predator</title><script src="https://www.gstatic.com/charts/loader.js"></script><script>google.charts.load("current", {packages:["corechart", "calendar"]});</script></head><body><h1>Predator</h1><script>google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
                 if ("")
                     google.visualization.mapsApiKey = ""
@@ -18,14 +8,21 @@
 
                 
 
-                var options = {"legend":{"position":"none"},"title":"Predator, wszystkich mute: 135, procent wszystkich: 1.2%","colorAxis":{"minValue":0,"maxValue":6}} 
+                var options = {"legend":{"position":"none"},"title":"Wyciszenia na dzień","colorAxis":{"minValue":0,"maxValue":6}} 
 
-                var chart = new google.visualization.Calendar(document.getElementById('00ad06b3-b87b-4854-a544-50dfaf94ebb8'));
+                var chart = new google.visualization.Calendar(document.getElementById('a405ecfb-48af-4959-9913-984d06671f6f'));
                 chart.draw(data, options);
-            }
-        </script>
-    </head>
-    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 03/08/2021 14:04:45</h3>
-        <div id="00ad06b3-b87b-4854-a544-50dfaf94ebb8" style="width: 1000px; height: 600px;"></div>
-    </body>
-</html>
+            }</script><div id="a405ecfb-48af-4959-9913-984d06671f6f" style="width: 100vw; height: 100vh"></div><script>google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "22"}, {"v": 8}]}, {"c" : [{"v": "0"}, {"v": 15}]}, {"c" : [{"v": "18"}, {"v": 13}]}, {"c" : [{"v": "1"}, {"v": 6}]}, {"c" : [{"v": "11"}, {"v": 4}]}, {"c" : [{"v": "19"}, {"v": 12}]}, {"c" : [{"v": "23"}, {"v": 11}]}, {"c" : [{"v": "17"}, {"v": 12}]}, {"c" : [{"v": "10"}, {"v": 1}]}, {"c" : [{"v": "16"}, {"v": 10}]}, {"c" : [{"v": "3"}, {"v": 2}]}, {"c" : [{"v": "7"}, {"v": 2}]}, {"c" : [{"v": "2"}, {"v": 6}]}, {"c" : [{"v": "20"}, {"v": 6}]}, {"c" : [{"v": "13"}, {"v": 4}]}, {"c" : [{"v": "15"}, {"v": 4}]}, {"c" : [{"v": "21"}, {"v": 14}]}, {"c" : [{"v": "4"}, {"v": 1}]}, {"c" : [{"v": "8"}, {"v": 1}]}, {"c" : [{"v": "14"}, {"v": 2}]}, {"c" : [{"v": "12"}, {"v": 1}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Mute o danych godzinach"} 
+
+                var chart = new google.visualization.Histogram(document.getElementById('bb37b43c-d053-43d7-a1af-3152b051ef48'));
+                chart.draw(data, options);
+            }</script><div id="bb37b43c-d053-43d7-a1af-3152b051ef48" style="width: 100vw; height: 100vh"></div></body></html>

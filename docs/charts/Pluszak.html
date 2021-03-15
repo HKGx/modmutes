@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Google Chart</title>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-              packages: ["calendar"]
-            });
-            google.charts.setOnLoadCallback(drawChart);
+<html><head><link href="../style.css" rel="stylesheet"><meta charset="UTF-8"><title>Pluszak</title><script src="https://www.gstatic.com/charts/loader.js"></script><script>google.charts.load("current", {packages:["corechart", "calendar"]});</script></head><body><h1>Pluszak</h1><script>google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
                 if ("")
                     google.visualization.mapsApiKey = ""
@@ -18,14 +8,21 @@
 
                 
 
-                var options = {"legend":{"position":"none"},"title":"Pluszak, wszystkich mute: 33, procent wszystkich: 0.3%","colorAxis":{"minValue":0,"maxValue":6}} 
+                var options = {"legend":{"position":"none"},"title":"Wyciszenia na dzień","colorAxis":{"minValue":0,"maxValue":6}} 
 
-                var chart = new google.visualization.Calendar(document.getElementById('e6c326b8-5366-43dc-8e0f-6ff52667096f'));
+                var chart = new google.visualization.Calendar(document.getElementById('8418de73-4410-4ff3-beae-310057d0825a'));
                 chart.draw(data, options);
-            }
-        </script>
-    </head>
-    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 03/08/2021 14:04:45</h3>
-        <div id="e6c326b8-5366-43dc-8e0f-6ff52667096f" style="width: 1000px; height: 600px;"></div>
-    </body>
-</html>
+            }</script><div id="8418de73-4410-4ff3-beae-310057d0825a" style="width: 100vw; height: 100vh"></div><script>google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "21"}, {"v": 1}]}, {"c" : [{"v": "23"}, {"v": 6}]}, {"c" : [{"v": "19"}, {"v": 2}]}, {"c" : [{"v": "22"}, {"v": 5}]}, {"c" : [{"v": "2"}, {"v": 8}]}, {"c" : [{"v": "20"}, {"v": 1}]}, {"c" : [{"v": "1"}, {"v": 2}]}, {"c" : [{"v": "4"}, {"v": 2}]}, {"c" : [{"v": "3"}, {"v": 2}]}, {"c" : [{"v": "5"}, {"v": 2}]}, {"c" : [{"v": "16"}, {"v": 1}]}, {"c" : [{"v": "0"}, {"v": 1}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Mute o danych godzinach"} 
+
+                var chart = new google.visualization.Histogram(document.getElementById('4f2fce3a-7f20-4d90-8348-5b78bc60a5c7'));
+                chart.draw(data, options);
+            }</script><div id="4f2fce3a-7f20-4d90-8348-5b78bc60a5c7" style="width: 100vw; height: 100vh"></div></body></html>

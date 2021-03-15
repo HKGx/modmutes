@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Google Chart</title>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-              packages: ["calendar"]
-            });
-            google.charts.setOnLoadCallback(drawChart);
+<html><head><link href="../style.css" rel="stylesheet"><meta charset="UTF-8"><title>Miuz</title><script src="https://www.gstatic.com/charts/loader.js"></script><script>google.charts.load("current", {packages:["corechart", "calendar"]});</script></head><body><h1>Miuz</h1><script>google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
                 if ("")
                     google.visualization.mapsApiKey = ""
 
-                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2020, 10, 30, 0, 0, 0)"}, {"v": 4}]}, {"c" : [{"v": "Date(2020, 11, 1, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 3, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 4, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 6, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 8, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 10, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 12, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 15, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 16, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 17, 0, 0, 0)"}, {"v": 7}]}, {"c" : [{"v": "Date(2020, 11, 18, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 19, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 20, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 23, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 28, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 31, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 2, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 3, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 5, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 6, 0, 0, 0)"}, {"v": 4}]}, {"c" : [{"v": "Date(2021, 0, 7, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 8, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 10, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 12, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 16, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 20, 0, 0, 0)"}, {"v": 8}]}, {"c" : [{"v": "Date(2021, 0, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 23, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 24, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 25, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 26, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 28, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 4, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 7, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 13, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 15, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 18, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 22, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 1, 23, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 27, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 2, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 4, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 5, 0, 0, 0)"}, {"v": 1}]}]});
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2020, 10, 30, 0, 0, 0)"}, {"v": 4}]}, {"c" : [{"v": "Date(2020, 11, 1, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 3, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 4, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 6, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 8, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 10, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 12, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 15, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 16, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 17, 0, 0, 0)"}, {"v": 7}]}, {"c" : [{"v": "Date(2020, 11, 18, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 19, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 20, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 23, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 28, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 31, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 2, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 3, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 5, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 6, 0, 0, 0)"}, {"v": 4}]}, {"c" : [{"v": "Date(2021, 0, 7, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 8, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 10, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 12, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 16, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 20, 0, 0, 0)"}, {"v": 8}]}, {"c" : [{"v": "Date(2021, 0, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 23, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 24, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 25, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 26, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 0, 28, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 4, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 7, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 13, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 15, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 17, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 18, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 22, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 1, 23, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 27, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 2, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 4, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 5, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 9, 0, 0, 0)"}, {"v": 2}]}]});
 
                 
 
-                var options = {"legend":{"position":"none"},"title":"Miuz, wszystkich mute: 98, procent wszystkich: 0.9%","colorAxis":{"minValue":0,"maxValue":6}} 
+                var options = {"legend":{"position":"none"},"title":"Wyciszenia na dzień","colorAxis":{"minValue":0,"maxValue":6}} 
 
-                var chart = new google.visualization.Calendar(document.getElementById('2a348df3-8f33-4138-a463-bed32e0a34c8'));
+                var chart = new google.visualization.Calendar(document.getElementById('81d0749c-87f8-42d6-ab8c-1ed5d1a0d479'));
                 chart.draw(data, options);
-            }
-        </script>
-    </head>
-    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 03/08/2021 14:04:45</h3>
-        <div id="2a348df3-8f33-4138-a463-bed32e0a34c8" style="width: 1000px; height: 600px;"></div>
-    </body>
-</html>
+            }</script><div id="81d0749c-87f8-42d6-ab8c-1ed5d1a0d479" style="width: 100vw; height: 100vh"></div><script>google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "14"}, {"v": 7}]}, {"c" : [{"v": "20"}, {"v": 8}]}, {"c" : [{"v": "21"}, {"v": 7}]}, {"c" : [{"v": "13"}, {"v": 3}]}, {"c" : [{"v": "17"}, {"v": 6}]}, {"c" : [{"v": "19"}, {"v": 4}]}, {"c" : [{"v": "22"}, {"v": 9}]}, {"c" : [{"v": "2"}, {"v": 1}]}, {"c" : [{"v": "23"}, {"v": 9}]}, {"c" : [{"v": "1"}, {"v": 5}]}, {"c" : [{"v": "0"}, {"v": 11}]}, {"c" : [{"v": "9"}, {"v": 3}]}, {"c" : [{"v": "12"}, {"v": 5}]}, {"c" : [{"v": "15"}, {"v": 8}]}, {"c" : [{"v": "18"}, {"v": 3}]}, {"c" : [{"v": "16"}, {"v": 7}]}, {"c" : [{"v": "3"}, {"v": 1}]}, {"c" : [{"v": "10"}, {"v": 1}]}, {"c" : [{"v": "11"}, {"v": 2}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Mute o danych godzinach"} 
+
+                var chart = new google.visualization.Histogram(document.getElementById('e6bfdc98-0eab-4918-b016-7cee798de9a1'));
+                chart.draw(data, options);
+            }</script><div id="e6bfdc98-0eab-4918-b016-7cee798de9a1" style="width: 100vw; height: 100vh"></div></body></html>

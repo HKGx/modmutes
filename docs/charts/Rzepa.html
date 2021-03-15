@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Google Chart</title>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-              packages: ["calendar"]
-            });
-            google.charts.setOnLoadCallback(drawChart);
+<html><head><link href="../style.css" rel="stylesheet"><meta charset="UTF-8"><title>Rzepa</title><script src="https://www.gstatic.com/charts/loader.js"></script><script>google.charts.load("current", {packages:["corechart", "calendar"]});</script></head><body><h1>Rzepa</h1><script>google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
                 if ("")
                     google.visualization.mapsApiKey = ""
 
-                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2020, 11, 15, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 16, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 17, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 19, 0, 0, 0)"}, {"v": 4}]}, {"c" : [{"v": "Date(2020, 11, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 23, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 24, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 26, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 4, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 7, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 8, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 17, 0, 0, 0)"}, {"v": 7}]}, {"c" : [{"v": "Date(2021, 0, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 2, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 1, 5, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 8, 0, 0, 0)"}, {"v": 4}]}]});
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2020, 11, 15, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 16, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 17, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2020, 11, 19, 0, 0, 0)"}, {"v": 4}]}, {"c" : [{"v": "Date(2020, 11, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 23, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2020, 11, 24, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2020, 11, 26, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 4, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 7, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 0, 8, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 0, 17, 0, 0, 0)"}, {"v": 7}]}, {"c" : [{"v": "Date(2021, 0, 22, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 1, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 2, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 1, 5, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 1, 8, 0, 0, 0)"}, {"v": 6}]}, {"c" : [{"v": "Date(2021, 1, 14, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 15, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 1, 16, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 18, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 1, 21, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 23, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 1, 24, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 1, 25, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 2, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 3, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 5, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 2, 7, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 2, 8, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 2, 9, 0, 0, 0)"}, {"v": 4}]}]});
 
                 
 
-                var options = {"legend":{"position":"none"},"title":"Rzepa, wszystkich mute: 41, procent wszystkich: 0.4%","colorAxis":{"minValue":0,"maxValue":6}} 
+                var options = {"legend":{"position":"none"},"title":"Wyciszenia na dzień","colorAxis":{"minValue":0,"maxValue":6}} 
 
-                var chart = new google.visualization.Calendar(document.getElementById('687a356b-0e21-4763-aa1a-2feff4f9344f'));
+                var chart = new google.visualization.Calendar(document.getElementById('f6ff6789-003f-497e-b98b-5480329e4b63'));
                 chart.draw(data, options);
-            }
-        </script>
-    </head>
-    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 03/08/2021 14:04:45</h3>
-        <div id="687a356b-0e21-4763-aa1a-2feff4f9344f" style="width: 1000px; height: 600px;"></div>
-    </body>
-</html>
+            }</script><div id="f6ff6789-003f-497e-b98b-5480329e4b63" style="width: 100vw; height: 100vh"></div><script>google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "19"}, {"v": 4}]}, {"c" : [{"v": "22"}, {"v": 3}]}, {"c" : [{"v": "8"}, {"v": 3}]}, {"c" : [{"v": "1"}, {"v": 2}]}, {"c" : [{"v": "2"}, {"v": 3}]}, {"c" : [{"v": "13"}, {"v": 3}]}, {"c" : [{"v": "9"}, {"v": 1}]}, {"c" : [{"v": "10"}, {"v": 2}]}, {"c" : [{"v": "0"}, {"v": 2}]}, {"c" : [{"v": "5"}, {"v": 7}]}, {"c" : [{"v": "14"}, {"v": 3}]}, {"c" : [{"v": "16"}, {"v": 2}]}, {"c" : [{"v": "17"}, {"v": 2}]}, {"c" : [{"v": "15"}, {"v": 3}]}, {"c" : [{"v": "4"}, {"v": 5}]}, {"c" : [{"v": "21"}, {"v": 8}]}, {"c" : [{"v": "23"}, {"v": 6}]}, {"c" : [{"v": "12"}, {"v": 3}]}, {"c" : [{"v": "20"}, {"v": 1}]}, {"c" : [{"v": "18"}, {"v": 2}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Mute o danych godzinach"} 
+
+                var chart = new google.visualization.Histogram(document.getElementById('2e8d32b4-3296-4631-817b-9246aed776bf'));
+                chart.draw(data, options);
+            }</script><div id="2e8d32b4-3296-4631-817b-9246aed776bf" style="width: 100vw; height: 100vh"></div></body></html>

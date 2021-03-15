@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Google Chart</title>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-              packages: ["calendar"]
-            });
-            google.charts.setOnLoadCallback(drawChart);
+<html><head><link href="../style.css" rel="stylesheet"><meta charset="UTF-8"><title>Budzik</title><script src="https://www.gstatic.com/charts/loader.js"></script><script>google.charts.load("current", {packages:["corechart", "calendar"]});</script></head><body><h1>Budzik</h1><script>google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
                 if ("")
                     google.visualization.mapsApiKey = ""
@@ -18,14 +8,21 @@
 
                 
 
-                var options = {"legend":{"position":"none"},"title":"Budzik, wszystkich mute: 10, procent wszystkich: 0.1%","colorAxis":{"minValue":0,"maxValue":6}} 
+                var options = {"legend":{"position":"none"},"title":"Wyciszenia na dzień","colorAxis":{"minValue":0,"maxValue":6}} 
 
-                var chart = new google.visualization.Calendar(document.getElementById('847bd7de-4c9d-4837-a764-4da23edb5e35'));
+                var chart = new google.visualization.Calendar(document.getElementById('f3702031-07d4-4b76-b82a-3776e4102fab'));
                 chart.draw(data, options);
-            }
-        </script>
-    </head>
-    <body style="background-color:#181a1b;"><h3 style="color: #ffffff"> Stan na 03/08/2021 14:04:45</h3>
-        <div id="847bd7de-4c9d-4837-a764-4da23edb5e35" style="width: 1000px; height: 600px;"></div>
-    </body>
-</html>
+            }</script><div id="f3702031-07d4-4b76-b82a-3776e4102fab" style="width: 100vw; height: 100vh"></div><script>google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "9"}, {"v": 1}]}, {"c" : [{"v": "23"}, {"v": 1}]}, {"c" : [{"v": "13"}, {"v": 3}]}, {"c" : [{"v": "17"}, {"v": 1}]}, {"c" : [{"v": "20"}, {"v": 3}]}, {"c" : [{"v": "2"}, {"v": 1}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Mute o danych godzinach"} 
+
+                var chart = new google.visualization.Histogram(document.getElementById('95ed6570-a222-458d-8189-53c1a1b2f251'));
+                chart.draw(data, options);
+            }</script><div id="95ed6570-a222-458d-8189-53c1a1b2f251" style="width: 100vw; height: 100vh"></div></body></html>
