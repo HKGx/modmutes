@@ -28,7 +28,7 @@ let body (lastMute: System.DateTime) (moderators: string array) =
         ]
     ]
 
-let page (lastMute: System.DateTime) (moderators: string array) =
+let index (lastMute: System.DateTime) (moderators: string array) =
     html [ _lang "pl" ] [
         head
         body lastMute moderators

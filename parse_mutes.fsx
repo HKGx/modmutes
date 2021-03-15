@@ -214,7 +214,7 @@ let parseModerator (m: Mutes.Root) =
         | Contains "miuz" _ -> Miuz
         | Contains "advancee" _ -> Advance
         | Contains "thekrago" _ -> Krago
-        | Contains "turnip" _ -> Rzepa
+        | ContainsMany [ "turnip"; "rzepa" ] _ -> Rzepa
         | Contains "szatanka" _ -> Szatanka
         | None -> Unknown "brak danych"
         | Some s -> Unknown s
@@ -247,6 +247,21 @@ let fromUnknown m =
 
 let filteredUnknownMutes =
     filteredMutes |> Array.filter (fromUnknown >> not)
+
+let mutesByModerators =
+    filteredUnknownMutes
+    |> Array.groupBy (fun m -> m.Moderator)
+
+let getDates (mutes: Mute array) =
+    mutes
+    |> Array.map (fun m -> m.Date)
+    |> Array.countBy (fun d -> d.Date)
+
+
+let moderatorDatesOfMutes =
+    mutesByModerators
+    |> Array.map (fun m -> fst (m), snd (m) |> getDates)
+
 
 
 stopwatch.Stop()

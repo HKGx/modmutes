@@ -1,11 +1,26 @@
+:root {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #181a1b;
+  width: 100vw;
 }
+
+svg {
+  overflow: auto;
+}
+
 a,
+h1,
 h3,
 li {
   color: aliceblue;
 }
 a:visited {
   color: bisque;
+}
+
+div[aria-label="A chart."] {
+  color: red;
 }
