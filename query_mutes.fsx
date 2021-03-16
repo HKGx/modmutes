@@ -21,8 +21,8 @@ let printQueryResult (result: Mute []) =
     |> String.concat "\n\n"
     |> printf "%s"
 
-let queryId (id: int64): Mute [] =
-    filteredMutes
+let queryId (id: int64) : Mute [] =
+    moderatorMutes
     |> Array.filter (fun m -> m.UserId = id)
 
 
