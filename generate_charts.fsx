@@ -62,17 +62,32 @@ let getMuteByHourChart (moderator: Moderator) =
 
 open System.IO
 
-let save (moderator: string) (charts: GoogleChart []) =
+let save (moderator: Moderator) (charts: GoogleChart []) =
 
-    let chartData (chart: GoogleChart) : PageChart =
+    let chartData (chart: GoogleChart) : PageChartData =
         let id = chart.Id
         let js = chart.GetInlineJS()
 
         { Id = id; JS = js }
 
+    let pageData =
+        let mutes_count = filteredUnknownMutes |> Array.length
+
+        let moderator_mutes =
+            filteredUnknownMutes
+            |> Array.filter (fun m -> m.Moderator = moderator)
+
+        let moderator_mutes_count = moderator_mutes |> Array.length
+
+        let last_mute_date = (moderator_mutes |> Array.last).Date
+
+        { Name = moderator.ToString()
+          AllMutesCount = mutes_count
+          ModeratorMutesCount = moderator_mutes_count
+          LastMute = last_mute_date }
 
     let page =
-        mute_page moderator (charts |> Array.map chartData)
+        mute_page pageData (charts |> Array.map chartData)
 
     let curr = Directory.GetCurrentDirectory()
     let file = $"{moderator}.html"
@@ -82,7 +97,7 @@ let save (moderator: string) (charts: GoogleChart []) =
 
 for moderator in moderatorDatesOfMutes |> Array.map fst do
     save
-        (moderator.ToString())
+        moderator
         [| getCalendarHeatmapChart moderator
            getMuteByHourChart moderator |]
 
@@ -90,4 +105,8 @@ for moderator in moderatorDatesOfMutes |> Array.map fst do
 ("index.html", index lastMute moderators)
 |> File.WriteAllText
 
+let indexPath =
+    Path.Combine(Directory.GetCurrentDirectory(), "index.html")
+
 printfn $"Generated {moderators.Length} charts! It took {stopwatch.Elapsed.TotalMilliseconds}ms"
+printfn $"index.html located at: {indexPath}"

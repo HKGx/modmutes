@@ -2,10 +2,10 @@
 
 open Giraffe.ViewEngine
 
-type PageChart = { Id: string; JS: string }
+type PageChartData = { Id: string; JS: string }
 
 
-let inline_chart (chart: PageChart) =
+let inline_chart (chart: PageChartData) =
     [ script [] [ chart.JS |> rawText ]
       div [ _id chart.Id
             _style "width: 100vw; height: 100vh" ] [] ]
@@ -23,18 +23,48 @@ let head (name: string) =
         ]
     ]
 
-let body (name: string) (charts: PageChart []) =
+type MutePageData =
+    { Name: string
+      AllMutesCount: int
+      ModeratorMutesCount: int
+      LastMute: System.DateTime }
 
-    body
-        []
-        (h1 [] [ str name ]
-         :: (charts
-             |> Array.map inline_chart
-             |> Array.toList
-             |> List.concat))
+let body (data: MutePageData) (charts: PageChartData []) =
+
+    let percentageOfAlLMutes =
+        (data.ModeratorMutesCount |> float)
+        / (data.AllMutesCount |> float)
+        * 100.0
+
+
+    let charts =
+        charts
+        |> Array.map inline_chart
+        |> Array.toList
+        |> List.concat
+
+    [ h1 [] [ str data.Name ]
+      p [] [
+          str $"""Wszystkie muty: {data.AllMutesCount}"""
+      ]
+      p [] [
+          str $"""Wszystkie muty moderatora: {data.ModeratorMutesCount}"""
+      ]
+      p [] [
+          str $"""Procent wszystkich mutów: %.2f{percentageOfAlLMutes}%%"""
+      ]
+      p [] [
+          str $"""Ostatni mute moderatora: {data.LastMute}"""
+      ] ]
+    @ charts
+    |> body []
 
 
 
-let mute_page (name: string) (charts: PageChart []) =
-    html [] [ head name; body name charts ]
+
+let mute_page (data: MutePageData) (charts: PageChartData []) =
+    html [] [
+        head data.Name
+        body data charts
+    ]
     |> RenderView.AsString.htmlDocument

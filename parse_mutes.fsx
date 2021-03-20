@@ -262,7 +262,7 @@ let moderatorDatesOfMutes =
     mutesByModerators
     |> Array.map (fun m -> fst (m), snd (m) |> getDates)
 
-
+let last_mute = filteredUnknownMutes |> Array.last
 
 stopwatch.Stop()
 

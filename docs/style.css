@@ -11,12 +11,11 @@ svg {
   overflow: auto;
 }
 
-a,
-h1,
-h3,
-li {
+* {
+  font-family: sans-serif;
   color: aliceblue;
 }
+
 a:visited {
   color: bisque;
 }
