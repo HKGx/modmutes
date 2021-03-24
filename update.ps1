@@ -1,12 +1,11 @@
 git pull
 Write-Information "Pulled from origin"
-if(-Not $args[0]) {
+if (-Not $args[0]) {
     throw "You haven't provided the file to download"
 }
 Invoke-WebRequest $args[0] -OutFile "lista_mute.json"
 $date = Get-Item lista_mute.json
-| ForEach-Object { $_.CreationTime } 
-| ForEach-Object { $_.ToUniversalTime() }
+| ForEach-Object { $_.LastWriteTimeUtc } 
 | ForEach-Object { $_.ToString() }
 
 $_ErrorActionPreference = $ErrorActionPreference
