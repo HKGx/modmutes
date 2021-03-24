@@ -99,7 +99,7 @@ for moderator in moderatorDatesOfMutes |> Array.map fst do
     save
         moderator
         [| getCalendarHeatmapChart moderator
-           getMuteByHourChart moderator |]
+           /*getMuteByHourChart moderator*/ |]
 
 
 ("index.html", index lastMute moderators)
