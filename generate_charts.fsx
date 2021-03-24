@@ -96,10 +96,7 @@ let save (moderator: Moderator) (charts: GoogleChart []) =
     File.WriteAllText(path, page)
 
 for moderator in moderatorDatesOfMutes |> Array.map fst do
-    save
-        moderator
-        [| getCalendarHeatmapChart moderator
-           /*getMuteByHourChart moderator*/ |]
+    save moderator [| getCalendarHeatmapChart moderator |]
 
 
 ("index.html", index lastMute moderators)
