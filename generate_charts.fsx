@@ -3,7 +3,6 @@
 #load "template_index.fsx"
 #load "template_mutes.fsx"
 
-open System
 open XPlot.GoogleCharts
 open Parse_mutes
 open Template_index
@@ -21,10 +20,9 @@ printfn "Started generating moderator mute charts"
 
 
 let moderators =
-    (Reflection.FSharpType.GetUnionCases(typeof<Moderator>)
-     |> Array.map (fun m -> m.Name))
-    |> Array.filter (fun n -> n <> "Unknown")
-    |> Array.sort
+    mutesByModerators
+    |> Array.map fst
+    |> Array.distinct
 
 
 let lastMute =
