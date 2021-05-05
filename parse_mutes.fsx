@@ -112,6 +112,7 @@ type Moderator =
     | Hypnosik
     | Mirra
     | Adiszek
+    | Bohenek
     | Unknown of string
 
 
