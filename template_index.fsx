@@ -1,11 +1,15 @@
+open Parse_mutes
+
 #r "nuget:Giraffe.ViewEngine"
+#load "parse_mutes.fsx"
 
 open Giraffe.ViewEngine
 
-let moderatorListItem (moderator: string) =
+let moderatorListItem (moderator: Moderator) =
     li [] [
-        a [ (sprintf "charts/%s.html" moderator |> _href) ] [
-            str moderator
+        a [ (sprintf "charts/%s.html" (moderator.ToString())
+             |> _href) ] [
+            str (moderator.ToString())
         ]
     ]
 
@@ -17,18 +21,31 @@ let head =
         title [] [ str "Moderator Mutes" ]
     ]
 
-let body (lastMute: System.DateTime) (moderators: string array) =
+let body (lastMute: System.DateTime) (moderators: Moderator array) =
+    let (activeMods, inactiveMods) = moderators |> Array.partition isActive
+
     body [] [
         h3 [] [
             sprintf "Ostatni mute: %s" (lastMute.ToString())
             |> str
         ]
-        ul [] [
-            for moderator in moderators -> moderatorListItem moderator
-        ]
+        h2 [] [ str "Aktywni" ]
+        ul
+            []
+            (activeMods
+             |> Array.map moderatorListItem
+             |> Array.toList)
+
+
+        h2 [] [ str "Nieaktywni" ]
+        ul
+            []
+            (inactiveMods
+             |> Array.map moderatorListItem
+             |> Array.toList)
     ]
 
-let index (lastMute: System.DateTime) (moderators: string array) =
+let index (lastMute: System.DateTime) (moderators: Moderator array) =
     html [ _lang "pl" ] [
         head
         body lastMute moderators
