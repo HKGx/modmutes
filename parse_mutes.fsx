@@ -132,6 +132,7 @@ let isActive (m: Moderator) : bool =
     | Hypnosik
     | Mirra
     | Adiszek
+    | Bohenek
     | Sparta -> true
     | _ -> false
 
@@ -242,6 +243,7 @@ let parseModerator (m: Mutes.Root) =
         | Contains "hypnosik" _ -> Hypnosik
         | Contains "adiszek" _ -> Adiszek
         | Contains "mirra" _ -> Mirra
+        | Contains "bohen" _ -> Bohenek
         | None -> Unknown "brak danych"
         | Some s -> Unknown s
 
