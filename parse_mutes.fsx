@@ -109,8 +109,31 @@ type Moderator =
     | Krago
     | Rzepa
     | Szatanka
+    | Hypnosik
+    | Mirra
+    | Adiszek
     | Unknown of string
 
+
+let isActive (m: Moderator) : bool =
+    match m with
+    | Szatanka
+    | Defous
+    | Barthes8
+    | Xemi
+    | Rei
+    | Raxor
+    | Hkg
+    | Miuz
+    | Advance
+    | Szejder
+    | Sekirei
+    | Dgaday
+    | Hypnosik
+    | Mirra
+    | Adiszek
+    | Sparta -> true
+    | _ -> false
 
 let (|Contains|_|) (what: string) (toMatch: string option) =
     match toMatch with
@@ -199,7 +222,7 @@ let parseModerator (m: Mutes.Root) =
         | ContainsMany [ "stachu220"; "sekirei" ] _ -> Sekirei
         | Contains "řƹȿʈ ɨɲ ρƹąȼƹ" _ -> RestInPeace
         | Contains "kitty" _ -> Kitty
-        | ContainsMany [ "sp4rt4"; "baby yoda" ] _ -> Sparta
+        | ContainsMany [ "sp4rt4"; "baby yoda"; "dorn" ] _ -> Sparta
         | ContainsMany [ "larysa"; "ary" ] _ -> Ary
         | ContainsMany [ "carnotaurus"; "saturn"; "raza'kiri" ] _ -> Vesti
         | Contains "upperkind" _ -> UpperKind
@@ -216,6 +239,9 @@ let parseModerator (m: Mutes.Root) =
         | Contains "thekrago" _ -> Krago
         | ContainsMany [ "turnip"; "rzepa" ] _ -> Rzepa
         | Contains "szatanka" _ -> Szatanka
+        | Contains "hypnosik" _ -> Hypnosik
+        | Contains "adiszek" _ -> Adiszek
+        | Contains "mirra" _ -> Mirra
         | None -> Unknown "brak danych"
         | Some s -> Unknown s
 
