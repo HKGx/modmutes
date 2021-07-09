@@ -124,7 +124,7 @@ let isActive (m: Moderator) : bool =
     | Dgaday
     | Miuz
     | Hypnosik
-    | Advancee
+    | Advance
     | Rei
     | Sparta
     | Sekirei
