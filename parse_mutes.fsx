@@ -10,7 +10,8 @@ printfn "Started parsing mutes"
 
 
 [<Literal>]
-let SAMPLE = """[
+let SAMPLE =
+    """[
         {
            "userId":"646407598077247499",
            "userTag":"Loxy#1111",
@@ -113,28 +114,31 @@ type Moderator =
     | Mirra
     | Adiszek
     | Bohenek
+    | Maciejuuu
+    | Niuha
     | Unknown of string
 
 
 let isActive (m: Moderator) : bool =
     match m with
-    | Szatanka
-    | Defous
-    | Barthes8
-    | Xemi
+    | Dgaday
+    | Miuz
+    | Hypnosik
+    | Advancee
     | Rei
+    | Sparta
+    | Sekirei
+    | Szatanka
+    | Xemi
+    | Maciejuuu
+    | Adiszek
+    | Szejder
+    | Mirra
     | Raxor
     | Hkg
-    | Miuz
-    | Advance
-    | Szejder
-    | Sekirei
-    | Dgaday
-    | Hypnosik
-    | Mirra
-    | Adiszek
+    | Asiua
     | Bohenek
-    | Sparta -> true
+    | Defous -> true
     | _ -> false
 
 let (|Contains|_|) (what: string) (toMatch: string option) =
@@ -245,6 +249,8 @@ let parseModerator (m: Mutes.Root) =
         | Contains "adiszek" _ -> Adiszek
         | Contains "mirra" _ -> Mirra
         | Contains "bohen" _ -> Bohenek
+        | Contains "maciejuuu" _ -> Maciejuuu
+        | Contains "niuha" _ -> Niuha
         | None -> Unknown "brak danych"
         | Some s -> Unknown s
 
