@@ -127,11 +127,9 @@ let isActive (m: Moderator) : bool =
     | Advance
     | Rei
     | Sparta
-    | Sekirei
     | Szatanka
     | Xemi
     | Maciejuuu
-    | Adiszek
     | Szejder
     | Mirra
     | Raxor
