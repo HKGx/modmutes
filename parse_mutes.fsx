@@ -142,6 +142,7 @@ let isActive (m: Moderator) : bool =
     | Yukaire
     | Martus
     | Batcoy
+    | Elisia
     | Freezy -> true
     | _ -> false
 
