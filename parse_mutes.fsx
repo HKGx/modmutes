@@ -116,13 +116,15 @@ type Moderator =
     | Bohenek
     | Maciejuuu
     | Niuha
+    | Yukaire
+    | Martus
+    | Batcoy
+    | Freezy
     | Unknown of string
 
 
 let isActive (m: Moderator) : bool =
     match m with
-    | Dgaday
-    | Miuz
     | Hypnosik
     | Advance
     | Rei
@@ -136,7 +138,11 @@ let isActive (m: Moderator) : bool =
     | Hkg
     | Asiua
     | Bohenek
-    | Defous -> true
+    | Defous
+    | Yukaire
+    | Martus
+    | Batcoy
+    | Freezy -> true
     | _ -> false
 
 let (|Contains|_|) (what: string) (toMatch: string option) =
@@ -169,7 +175,7 @@ type Mute =
 let parseModerator (m: Mutes.Root) =
     let moderator =
         match m.Moderator with
-        | Contains "rei~" _ -> Rei
+        | ContainsMany [ "rei~"; "reiuwa" ] _ -> Rei
         | Contains "defous" _ -> Defous
         | Contains "szejder" _ -> Szejder
         | Contains "barthes" _ -> Barthes8
@@ -198,7 +204,7 @@ let parseModerator (m: Mutes.Root) =
         | Contains "deathstrike" _ -> DeathStrike
         | Contains "daenora" _ -> Daenora
         | Contains "wujekpienio" _ -> WujekPienio
-        | Contains "elisia" _ -> Elisia
+        | ContainsMany [ "elisia"; "elmisia" ] _ -> Elisia
         | ContainsMany [ "justme"; "pluszak" ] _ -> Pluszak
         | Contains "jonek" _ -> Jonek
         | Contains "koza" _ -> Koza
@@ -235,7 +241,7 @@ let parseModerator (m: Mutes.Root) =
         | Contains "dgaday" _ -> Dgaday
         | Contains "just marcin" _ -> JustMarcin
         | Contains "misa" _ -> Misa
-        | Contains "ra1x1or" _ -> Raxor
+        | ContainsMany [ "ra1x1or"; "gwynbleidd" ] _ -> Raxor
         | Contains "herbatka" _ -> Herbatka
         | Contains "xemi" _ -> Xemi
         | Contains "miuz" _ -> Miuz
@@ -249,6 +255,10 @@ let parseModerator (m: Mutes.Root) =
         | Contains "bohen" _ -> Bohenek
         | Contains "maciejuuu" _ -> Maciejuuu
         | Contains "niuha" _ -> Niuha
+        | Contains "batcoy" _ -> Batcoy
+        | ContainsMany [ "freezy"; "mero#" ] _ -> Freezy
+        | Contains "martuś" _ -> Martus
+        | Contains "yukaire" _ -> Yukaire
         | None -> Unknown "brak danych"
         | Some s -> Unknown s
 
@@ -296,6 +306,24 @@ let moderatorDatesOfMutes =
     |> Array.map (fun m -> fst (m), snd (m) |> getDates)
 
 let last_mute = filteredUnknownMutes |> Array.last
+
+let unknown_to_str (m: Mute) =
+    let unknown_name =
+        match m.Moderator with
+        | Unknown s -> s
+        | _ -> ""
+
+    let tag =
+        match m.UserTag with
+        | Some s -> s
+        | None -> "-1"
+
+    $"{m.UserId} {tag} {m.Date} {m.Length} {m.Reason} - {unknown_name}"
+
+filteredMutes
+|> Array.filter fromUnknown
+|> Array.map unknown_to_str
+|> Array.iter (eprintfn "%s")
 
 stopwatch.Stop()
 
