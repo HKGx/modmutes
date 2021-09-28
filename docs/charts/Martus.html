@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><link href="../style.css" rel="stylesheet"><meta charset="UTF-8"><title>Martus</title><script src="https://www.gstatic.com/charts/loader.js"></script><script>google.charts.load("current", {packages:["corechart", "calendar"]});</script></head><body><h1>Martus</h1><p>Wszystkie muty: 13739</p><p>Wszystkie muty moderatora: 10</p><p>Procent wszystkich mut&#243;w: 0.07%</p><p>Ostatni mute moderatora: 09/23/2021 20:09:52</p><script>google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                if ("")
+                    google.visualization.mapsApiKey = ""
+
+                var data = new google.visualization.DataTable({"cols": [{"type": "datetime" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Column 2" ,"label": "Column 2" }], "rows" : [{"c" : [{"v": "Date(2021, 8, 9, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 8, 11, 0, 0, 0)"}, {"v": 3}]}, {"c" : [{"v": "Date(2021, 8, 15, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 8, 19, 0, 0, 0)"}, {"v": 1}]}, {"c" : [{"v": "Date(2021, 8, 21, 0, 0, 0)"}, {"v": 2}]}, {"c" : [{"v": "Date(2021, 8, 23, 0, 0, 0)"}, {"v": 1}]}]});
+
+                
+
+                var options = {"legend":{"position":"none"},"title":"Wyciszenia na dzień","colorAxis":{"minValue":0,"maxValue":6}} 
+
+                var chart = new google.visualization.Calendar(document.getElementById('7c5718fa-faef-4073-ab83-b97e351c62a6'));
+                chart.draw(data, options);
+            }</script><div id="7c5718fa-faef-4073-ab83-b97e351c62a6" style="width: 100vw; height: 100vh"></div></body></html>
