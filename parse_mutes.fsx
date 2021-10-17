@@ -133,7 +133,6 @@ let isActive (m: Moderator) : bool =
     | Xemi
     | Maciejuuu
     | Szejder
-    | Mirra
     | Raxor
     | Hkg
     | Asiua
