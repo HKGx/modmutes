@@ -120,6 +120,9 @@ type Moderator =
     | Martus
     | Batcoy
     | Freezy
+    | NaziZombie
+    | Kerizu
+    | OskiBoski
     | Unknown of string
 
 
@@ -138,10 +141,12 @@ let isActive (m: Moderator) : bool =
     | Asiua
     | Bohenek
     | Defous
-    | Yukaire
     | Martus
     | Batcoy
     | Elisia
+    | OskiBoski
+    | NaziZombie
+    | Kerizu
     | Freezy -> true
     | _ -> false
 
@@ -259,6 +264,9 @@ let parseModerator (m: Mutes.Root) =
         | ContainsMany [ "freezy"; "mero#" ] _ -> Freezy
         | Contains "martuś" _ -> Martus
         | Contains "yukaire" _ -> Yukaire
+        | Contains "kerizuu" _ -> Kerizu
+        | Contains "oskiboski" _ -> OskiBoski
+        | Contains "nazi zombie" _ -> NaziZombie
         | None -> Unknown "brak danych"
         | Some s -> Unknown s
 
